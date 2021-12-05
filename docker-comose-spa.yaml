@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  backend-server:
+    build: ./backend
+    ports:
+    - "8000:8000"
+  frontend-server:
+    build: ./spa_front
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend-server
+    environment:
+      - REACT_APP_ROOT_BACKEND_URI=http://0.0.0.0:8000/
