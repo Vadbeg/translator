@@ -11,16 +11,22 @@ git clone https://github.com/Vadbeg/translator.git
 ```
 
 
-## Installation
+## Usage
 
-To install all dependencies you can use docker-compose:
+To start web app use:
 
-```
-docker-compose build &&
-docker-compose up
+```shell
+source scripts/build_image.sh &&
+source scripts/start_container.sh
 ```
 
 Now you can open http://0.0.0.0:8000 and use project.
+
+To stop web app use in separate shell instance:
+
+```shell
+source scripts/stop_container.sh
+```
 
 ## Built With
 
