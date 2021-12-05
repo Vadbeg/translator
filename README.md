@@ -16,17 +16,11 @@ git clone https://github.com/Vadbeg/translator.git
 To start web app use:
 
 ```shell
-source scripts/build_image.sh &&
-source scripts/start_container.sh
+docker-compose -f docker-comose-spa.yaml build &&
+docker-compose -f docker-comose-spa.yaml up
 ```
 
-Now you can open http://0.0.0.0:8000 and use project.
-
-To stop web app use in separate shell instance:
-
-```shell
-source scripts/stop_container.sh
-```
+Now you can open http://localhost:3000/ and use project.
 
 ## Built With
 
