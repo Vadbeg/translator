@@ -1,49 +1,20 @@
 import React from 'react';
-// import {
-//     Navigate,
-//     Route,
-//     Routes,
-// } from "react-router-dom";
-
-// import Home from "./templates/home";
 import axios from "axios";
 
 class App extends React.Component {
-    // render() {
-    //     const { history } = this.props;
-    //
-    //     let firstElement = (
-    //         <div>
-    //             <Routes>
-    //                 <Route history={history} path='/home' component={Home} />
-    //
-    //                 <Navigate from='/' to='/home'/>
-    //             </Routes>
-    //         </div>
-    //     );
-    //
-    //     return firstElement
-    // }
-
-    // eslint-disable-next-line no-useless-concat
-    _TRANSLATION_URI = 'http://0.0.0.0:8000/query?query_text=Text'
+    _TRANSLATION_URI = process.env.REACT_APP_ROOT_BACKEND_URI + '/query'
 
     constructor(props) {
         super(props);
 
         this.state = {
-            'translation_text': "text"
+            'translation_text': null
         }
     }
 
     changeQueryText = (event) => {
         event.preventDefault();
         let query_text = event.target.value;
-
-        let {
-            // eslint-disable-next-line
-            translation_text
-        } = this.state;
 
         console.log(query_text)
 
@@ -101,8 +72,5 @@ class App extends React.Component {
         return queryForm
     }
 }
-
-
-// }
 
 export default App;

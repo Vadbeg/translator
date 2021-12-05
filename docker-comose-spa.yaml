@@ -12,4 +12,4 @@ services:
     depends_on:
       - backend-server
     environment:
-      - REACT_APP_ROOT_BACKEND_URI=http://0.0.0.0:8000/
+      - REACT_APP_ROOT_BACKEND_URI=http://localhost:8000
